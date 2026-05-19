@@ -1,8 +1,8 @@
-import { betterAuth } from "better-auth"
-import { prismaAdapter } from "better-auth/adapters/prisma"
-import { nextCookies } from "better-auth/next-js"
-import { haveIBeenPwned } from "better-auth/plugins"
-import prisma from "./prisma"
+import { betterAuth } from "better-auth";
+import { prismaAdapter } from "better-auth/adapters/prisma";
+import { nextCookies } from "better-auth/next-js";
+import { admin, haveIBeenPwned } from "better-auth/plugins";
+import prisma from "./prisma";
 
 export const auth = betterAuth({
   database: prismaAdapter(prisma, {
@@ -30,12 +30,13 @@ export const auth = betterAuth({
     },
   },
   plugins: [
+    admin(),
     haveIBeenPwned({
       customPasswordCompromisedMessage:
         "This password has been linked to a data breach. Please choose a more secure password.",
     }),
     nextCookies(),
   ],
-})
+});
 
-export type Session = typeof auth.$Infer.Session
+export type Session = typeof auth.$Infer.Session;
