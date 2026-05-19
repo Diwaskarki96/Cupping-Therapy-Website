@@ -38,7 +38,7 @@
     "embla-carousel-react": "^8.6.0",
     "loglayer": "^9.1.0",
     "lucide-react": "^1.6.0",
-    "next": "16.2.0",
+    "next": "16.2.6",
     "next-safe-action": "^8.1.8",
     "nuqs": "^2.8.9",
     "pg": "^8.20.0",
@@ -77,13 +77,5 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@prisma/engines",
-      "esbuild",
-      "prisma",
-      "sharp"
-    ]
   }
 }

@@ -9,7 +9,7 @@ datasource db {
 }
 
 model User {
-  id            String    @id @default(cuid())
+  id            String    @id 
   name          String
   email         String
   emailVerified Boolean   @default(false)
@@ -25,7 +25,7 @@ model User {
 }
 
 model Session {
-  id        String   @id @default(cuid())
+  id        String   @id
   expiresAt DateTime
   token     String
   createdAt DateTime @default(now())
@@ -41,7 +41,7 @@ model Session {
 }
 
 model Account {
-  id                    String    @id @default(cuid())
+  id                    String    @id
   accountId             String
   providerId            String
   userId                String
@@ -61,7 +61,7 @@ model Account {
 }
 
 model Verification {
-  id         String   @id @default(cuid())
+  id         String   @id
   identifier String
   value      String
   expiresAt  DateTime
@@ -73,7 +73,7 @@ model Verification {
 }
 
 model Appointment {
-  id            String   @id @default(cuid())
+  id            String   @id @default(cuid(2))
   fullName      String
   email         String
   phone         String
@@ -88,7 +88,7 @@ model Appointment {
 }
 
 model Testimonial {
-  id        String   @id @default(cuid())
+  id        String   @id @default(cuid(2))
   name      String
   role      String?
   content   String
@@ -101,7 +101,7 @@ model Testimonial {
 }
 
 model Service {
-  id          String   @id @default(cuid())
+  id          String   @id @default(cuid(2))
   title       String
   description String
   iconName    String
@@ -114,7 +114,7 @@ model Service {
 }
 
 model DoctorProfile {
-  id              String   @id @default(cuid())
+  id              String   @id @default(cuid(2))
   name            String
   bio             String
   description     String
